@@ -3,7 +3,7 @@ import Cards from './components/Cards/Cards'
 
 import styles from './App.module.css'
 import {fetchData} from './Api'
-
+import 'D:/React/tracker/node_modules/bootswatch/dist/slate/bootstrap.css'
 
  class App extends Component {
     state={
