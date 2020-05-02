@@ -6,3 +6,31 @@
     width: 120px;
     text-align: center;
   }
+  .scard {
+    height: 100px;
+    width: 120px;
+    text-align: center;
+  }
+  .container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .imgSize{
+      height: 100px;
+      width: 80px;
+      align-items: center;
+  }
+  .styleHeading{
+    font-family: Georgia, serif;
+    font-size: 30px;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    color: #FFB377;
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: small-caps;
+    text-transform: none;
+    }
+  

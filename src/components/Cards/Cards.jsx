@@ -7,12 +7,13 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import Radio from '@material-ui/core/Radio';
 import Paper from '@material-ui/core/Paper';
+import CountUp from 'react-countup';
 
 import styles from "D:/React/tracker/src/components/Cards/Cards.module.css"
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1,
+    flexGrow:0,
   },
   paper: {
     height: 140,
@@ -57,54 +58,66 @@ const Cards = ({ data: { Karnataka } }) => {
   console.log(District[Dkeys])
   return (
     <div >
+      <div className={styles.container}>
+      <h1 className={styles.styleHeading}>Karnataka COVID Tracker</h1>
+      {/* <img src="D:/React/tracker/public/log.jpg"></img> */}
+      </div>
+      <hr></hr>
+      <div className={styles.container}>
       <Grid container className={classes.root} spacing={2}>
         <Grid item xs={12}>
           <Grid container justify="center" spacing={spacing}>
             <Grid item>
               <div className={styles.stylecard}>
-              <div className="card text-white bg-danger mb-3" >
-                <div className="card-header">Confirmed</div>
+              <div class="card border-danger mb-3" >
+                <div className="card-header ">Infected</div>
                 <div className="card-body">
-                  <h4 className="card-title">{confirmed}</h4>
+                  <h2 className="card-title text-danger"><CountUp start={0} end={confirmed} duration={3} separator="," /></h2>
                 </div>
               </div>
               </div>
             </Grid>
             <Grid item>
               <div className={styles.stylecard}>
-              <div className="card text-white bg-info mb-3" >
+              <div class="card border-info mb-3" >
                 <div className="card-header"> Active </div>
                 <div className="card-body">
-                  <h4 className="card-title">{active}</h4>
+                  <h2 className="card-title text-info"><CountUp start={0} end={active} duration={3} separator="," /></h2>
                 </div>
               </div>
               </div>
             </Grid>
             <Grid item>
-              <div className="card text-white bg-success mb-3" >
+              <div className={styles.stylecard}>
+              <div class="card border-success mb-3" >
                 <div className="card-header">Recovered</div>
                 <div className="card-body">
-                  <h4 className="card-title">{recovered}</h4>
+                  <h2 className="card-title text-success"><CountUp start={0} end={recovered} duration={3} separator="," /></h2>
                 </div>
+              </div>
               </div>
             </Grid>
             <Grid item>
-              <div className="card text-white bg-mute mb-3" >
-                <div className="card-header">Deceased</div>
-                <div className="card-body">
-                  <h4 className="card-title">{dead}</h4>
+              <div className={styles.stylecard}>
+              <div class="card border-secondary mb-3" >
+                <div className="card-header text-center">Deceased</div>
+                <div className="card-body text-center">
+                  <h2 className="card-title"><CountUp start={0} end={dead} duration={3} separator="," /></h2>
                 </div>
+              </div>
               </div>
             </Grid> 
           </Grid>
         </Grid>
       </Grid>
-
+      </div>
+      <hr></hr>
+      <hr></hr>
       <table className="table table-hover">
         <thead>
           <tr>
             <th scope="col" className={styles.text} >District</th>
-            <th scope="col" className="text-danger">Confirmed</th>
+            <th scope="col" className="text-danger">Infected</th>
             <th scope="col" className="text-info">Active</th>
             <th scope="col" className="text-success">Recovered</th>
             <th scope="col" className="text-secondary">Deceased</th>
